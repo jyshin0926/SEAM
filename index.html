@@ -58,14 +58,14 @@
       <h2>Emotion alignment</h2>
       <p>
         Two IEMOCAP Session&nbsp;5 clips per emotion. Play the speech first,
-        then compare Ours against SA3 lexical, SA3 VA, and an instrument-only
-        SA3 anchor.
+        then compare an instrument-only SA3 anchor, SA3 lexical, and SA3 VA
+        against Ours.
       </p>
 
       <div class="systems">
         <article class="sys">
-          <h3>Ours</h3>
-          <p>Speech-conditioned tokens. Emotion-free prompt only.</p>
+          <h3>SA3 anchor</h3>
+          <p>Instrument-only SA3. No emotion word and no speech tokens.</p>
           <p><code>piano, violin string, and drum</code></p>
         </article>
         <article class="sys">
@@ -79,8 +79,8 @@
           <p><code>…, valence v, arousal a.</code></p>
         </article>
         <article class="sys">
-          <h3>SA3 anchor</h3>
-          <p>Instrument-only SA3. No emotion word and no speech tokens.</p>
+          <h3>Ours</h3>
+          <p>Speech-conditioned tokens. Emotion-free prompt only.</p>
           <p><code>piano, violin string, and drum</code></p>
         </article>
       </div>
@@ -102,12 +102,11 @@
           <audio controls preload="metadata" src="audio/task1/angry/set1/speech.mp3"></audio>
         </div>
         <div class="compare">
-          <div class="col ours">
-            <h4>Ours</h4>
-            <p class="prompt">piano, violin string, and drum + speech tokens</p>
-            <audio controls preload="metadata" src="audio/task1/angry/set1/ours.mp3"></audio>
-          </div>
           <div class="col">
+            <h4>SA3 anchor</h4>
+            <p class="prompt">Instrument-only SA3, no emotion word</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set1/anchor.mp3"></audio>
+          </div>          <div class="col">
             <h4>SA3 lexical</h4>
             <p class="prompt">piano, violin string, and drum, angry</p>
             <audio controls preload="metadata" src="audio/task1/angry/set1/sa3_lexical.mp3"></audio>
@@ -117,10 +116,10 @@
             <p class="prompt">piano, violin string, and drum, valence -0.75, arousal +0.25.</p>
             <audio controls preload="metadata" src="audio/task1/angry/set1/sa3_va.mp3"></audio>
           </div>
-          <div class="col">
-            <h4>SA3 anchor</h4>
-            <p class="prompt">Instrument-only SA3, no emotion word</p>
-            <audio controls preload="metadata" src="audio/task1/angry/set1/anchor.mp3"></audio>
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech tokens</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set1/ours.mp3"></audio>
           </div>
         </div>
       </article>
@@ -135,12 +134,11 @@
           <audio controls preload="metadata" src="audio/task1/angry/set2/speech.mp3"></audio>
         </div>
         <div class="compare">
-          <div class="col ours">
-            <h4>Ours</h4>
-            <p class="prompt">piano, violin string, and drum + speech tokens</p>
-            <audio controls preload="metadata" src="audio/task1/angry/set2/ours.mp3"></audio>
-          </div>
           <div class="col">
+            <h4>SA3 anchor</h4>
+            <p class="prompt">Instrument-only SA3, no emotion word</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set2/anchor.mp3"></audio>
+          </div>          <div class="col">
             <h4>SA3 lexical</h4>
             <p class="prompt">piano, violin string, and drum, angry</p>
             <audio controls preload="metadata" src="audio/task1/angry/set2/sa3_lexical.mp3"></audio>
@@ -150,10 +148,10 @@
             <p class="prompt">piano, violin string, and drum, valence -0.75, arousal +0.50.</p>
             <audio controls preload="metadata" src="audio/task1/angry/set2/sa3_va.mp3"></audio>
           </div>
-          <div class="col">
-            <h4>SA3 anchor</h4>
-            <p class="prompt">Instrument-only SA3, no emotion word</p>
-            <audio controls preload="metadata" src="audio/task1/angry/set2/anchor.mp3"></audio>
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech tokens</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set2/ours.mp3"></audio>
           </div>
         </div>
       </article>
@@ -168,12 +166,11 @@
           <audio controls preload="metadata" src="audio/task1/happy/set1/speech.mp3"></audio>
         </div>
         <div class="compare">
-          <div class="col ours">
-            <h4>Ours</h4>
-            <p class="prompt">piano, violin string, and drum + speech tokens</p>
-            <audio controls preload="metadata" src="audio/task1/happy/set1/ours.mp3"></audio>
-          </div>
           <div class="col">
+            <h4>SA3 anchor</h4>
+            <p class="prompt">Instrument-only SA3, no emotion word</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set1/anchor.mp3"></audio>
+          </div>          <div class="col">
             <h4>SA3 lexical</h4>
             <p class="prompt">piano, violin string, and drum, happy</p>
             <audio controls preload="metadata" src="audio/task1/happy/set1/sa3_lexical.mp3"></audio>
@@ -183,10 +180,10 @@
             <p class="prompt">piano, violin string, and drum, valence +0.50, arousal 0.00.</p>
             <audio controls preload="metadata" src="audio/task1/happy/set1/sa3_va.mp3"></audio>
           </div>
-          <div class="col">
-            <h4>SA3 anchor</h4>
-            <p class="prompt">Instrument-only SA3, no emotion word</p>
-            <audio controls preload="metadata" src="audio/task1/happy/set1/anchor.mp3"></audio>
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech tokens</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set1/ours.mp3"></audio>
           </div>
         </div>
       </article>
@@ -201,12 +198,11 @@
           <audio controls preload="metadata" src="audio/task1/happy/set2/speech.mp3"></audio>
         </div>
         <div class="compare">
-          <div class="col ours">
-            <h4>Ours</h4>
-            <p class="prompt">piano, violin string, and drum + speech tokens</p>
-            <audio controls preload="metadata" src="audio/task1/happy/set2/ours.mp3"></audio>
-          </div>
           <div class="col">
+            <h4>SA3 anchor</h4>
+            <p class="prompt">Instrument-only SA3, no emotion word</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set2/anchor.mp3"></audio>
+          </div>          <div class="col">
             <h4>SA3 lexical</h4>
             <p class="prompt">piano, violin string, and drum, happy</p>
             <audio controls preload="metadata" src="audio/task1/happy/set2/sa3_lexical.mp3"></audio>
@@ -216,10 +212,10 @@
             <p class="prompt">piano, violin string, and drum, valence +0.50, arousal +0.17.</p>
             <audio controls preload="metadata" src="audio/task1/happy/set2/sa3_va.mp3"></audio>
           </div>
-          <div class="col">
-            <h4>SA3 anchor</h4>
-            <p class="prompt">Instrument-only SA3, no emotion word</p>
-            <audio controls preload="metadata" src="audio/task1/happy/set2/anchor.mp3"></audio>
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech tokens</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set2/ours.mp3"></audio>
           </div>
         </div>
       </article>
@@ -234,12 +230,11 @@
           <audio controls preload="metadata" src="audio/task1/sad/set1/speech.mp3"></audio>
         </div>
         <div class="compare">
-          <div class="col ours">
-            <h4>Ours</h4>
-            <p class="prompt">piano, violin string, and drum + speech tokens</p>
-            <audio controls preload="metadata" src="audio/task1/sad/set1/ours.mp3"></audio>
-          </div>
           <div class="col">
+            <h4>SA3 anchor</h4>
+            <p class="prompt">Instrument-only SA3, no emotion word</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set1/anchor.mp3"></audio>
+          </div>          <div class="col">
             <h4>SA3 lexical</h4>
             <p class="prompt">piano, violin string, and drum, sad</p>
             <audio controls preload="metadata" src="audio/task1/sad/set1/sa3_lexical.mp3"></audio>
@@ -249,10 +244,10 @@
             <p class="prompt">piano, violin string, and drum, valence -0.50, arousal -0.25.</p>
             <audio controls preload="metadata" src="audio/task1/sad/set1/sa3_va.mp3"></audio>
           </div>
-          <div class="col">
-            <h4>SA3 anchor</h4>
-            <p class="prompt">Instrument-only SA3, no emotion word</p>
-            <audio controls preload="metadata" src="audio/task1/sad/set1/anchor.mp3"></audio>
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech tokens</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set1/ours.mp3"></audio>
           </div>
         </div>
       </article>
@@ -267,12 +262,11 @@
           <audio controls preload="metadata" src="audio/task1/sad/set2/speech.mp3"></audio>
         </div>
         <div class="compare">
-          <div class="col ours">
-            <h4>Ours</h4>
-            <p class="prompt">piano, violin string, and drum + speech tokens</p>
-            <audio controls preload="metadata" src="audio/task1/sad/set2/ours.mp3"></audio>
-          </div>
           <div class="col">
+            <h4>SA3 anchor</h4>
+            <p class="prompt">Instrument-only SA3, no emotion word</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set2/anchor.mp3"></audio>
+          </div>          <div class="col">
             <h4>SA3 lexical</h4>
             <p class="prompt">piano, violin string, and drum, sad</p>
             <audio controls preload="metadata" src="audio/task1/sad/set2/sa3_lexical.mp3"></audio>
@@ -282,10 +276,10 @@
             <p class="prompt">piano, violin string, and drum, valence -0.50, arousal +0.25.</p>
             <audio controls preload="metadata" src="audio/task1/sad/set2/sa3_va.mp3"></audio>
           </div>
-          <div class="col">
-            <h4>SA3 anchor</h4>
-            <p class="prompt">Instrument-only SA3, no emotion word</p>
-            <audio controls preload="metadata" src="audio/task1/sad/set2/anchor.mp3"></audio>
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech tokens</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set2/ours.mp3"></audio>
           </div>
         </div>
       </article>
@@ -300,12 +294,11 @@
           <audio controls preload="metadata" src="audio/task1/excited/set1/speech.mp3"></audio>
         </div>
         <div class="compare">
-          <div class="col ours">
-            <h4>Ours</h4>
-            <p class="prompt">piano, violin string, and drum + speech tokens</p>
-            <audio controls preload="metadata" src="audio/task1/excited/set1/ours.mp3"></audio>
-          </div>
           <div class="col">
+            <h4>SA3 anchor</h4>
+            <p class="prompt">Instrument-only SA3, no emotion word</p>
+            <audio controls preload="metadata" src="audio/task1/excited/set1/anchor.mp3"></audio>
+          </div>          <div class="col">
             <h4>SA3 lexical</h4>
             <p class="prompt">piano, violin string, and drum, excited</p>
             <audio controls preload="metadata" src="audio/task1/excited/set1/sa3_lexical.mp3"></audio>
@@ -315,10 +308,10 @@
             <p class="prompt">piano, violin string, and drum, valence +0.25, arousal 0.00.</p>
             <audio controls preload="metadata" src="audio/task1/excited/set1/sa3_va.mp3"></audio>
           </div>
-          <div class="col">
-            <h4>SA3 anchor</h4>
-            <p class="prompt">Instrument-only SA3, no emotion word</p>
-            <audio controls preload="metadata" src="audio/task1/excited/set1/anchor.mp3"></audio>
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech tokens</p>
+            <audio controls preload="metadata" src="audio/task1/excited/set1/ours.mp3"></audio>
           </div>
         </div>
       </article>
@@ -333,12 +326,11 @@
           <audio controls preload="metadata" src="audio/task1/excited/set2/speech.mp3"></audio>
         </div>
         <div class="compare">
-          <div class="col ours">
-            <h4>Ours</h4>
-            <p class="prompt">piano, violin string, and drum + speech tokens</p>
-            <audio controls preload="metadata" src="audio/task1/excited/set2/ours.mp3"></audio>
-          </div>
           <div class="col">
+            <h4>SA3 anchor</h4>
+            <p class="prompt">Instrument-only SA3, no emotion word</p>
+            <audio controls preload="metadata" src="audio/task1/excited/set2/anchor.mp3"></audio>
+          </div>          <div class="col">
             <h4>SA3 lexical</h4>
             <p class="prompt">piano, violin string, and drum, excited</p>
             <audio controls preload="metadata" src="audio/task1/excited/set2/sa3_lexical.mp3"></audio>
@@ -348,10 +340,10 @@
             <p class="prompt">piano, violin string, and drum, valence +0.75, arousal +0.50.</p>
             <audio controls preload="metadata" src="audio/task1/excited/set2/sa3_va.mp3"></audio>
           </div>
-          <div class="col">
-            <h4>SA3 anchor</h4>
-            <p class="prompt">Instrument-only SA3, no emotion word</p>
-            <audio controls preload="metadata" src="audio/task1/excited/set2/anchor.mp3"></audio>
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech tokens</p>
+            <audio controls preload="metadata" src="audio/task1/excited/set2/ours.mp3"></audio>
           </div>
         </div>
       </article>

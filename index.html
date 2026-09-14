@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpeechMood — listening demo</title>
+  <meta name="description" content="ICASSP 2027 listening demo: speech-conditioned affective music generation (Task 1 emotion alignment)." />
+  <base href="/SEAM/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="brand">SpeechMood · ICASSP 2027</p>
+      <h1>Speech-conditioned affective music generation</h1>
+      <p class="lede">
+        Given a spoken utterance and an emotion-free instrument prompt, generate
+        background music whose valence–arousal follows the speech — without
+        putting mood words in the text.
+      </p>
+      <div class="meta-row">
+        <span class="chip">Frozen SA3 medium</span>
+        <span class="chip">wav2vec2-ER tokens</span>
+        <span class="chip">IEMOCAP Session 5</span>
+        <span class="chip">Prompt: piano, violin string, and drum</span>
+      </div>
+      <nav class="toc" aria-label="Page sections">
+        <a href="#abstract">Abstract</a>
+        <a class="on" href="#task1">Task 1 · alignment</a>
+        <a href="#task2">Task 2 · intensity</a>
+      </nav>
+    </header>
+
+    <section id="abstract">
+      <p class="kicker">Abstract</p>
+      <h2>Listen to the speech, then the music</h2>
+      <div class="abstract">
+        <p>
+          Text-to-music models usually take affect from a word such as
+          <em>angry</em>. SpeechMood instead injects a short stream of
+          speech-derived valence / arousal tokens into a frozen Stable Audio 3
+          DiT. The text prompt stays instrument-only; intensity is a residual
+          in SER space against a matched baseline clip.
+        </p>
+        <p>
+          This page is the paper companion. Task 1 asks whether the generated
+          music matches the emotion of the reference speech. All systems share
+          the same SA3 backbone, duration (30&nbsp;s), and instrument bed.
+        </p>
+      </div>
+    </section>
+
+    <section id="task1">
+      <p class="kicker">Task 1</p>
+      <h2>Emotion alignment</h2>
+      <p>
+        Two IEMOCAP Session&nbsp;5 clips per emotion. Play the speech first,
+        then compare three unlabeled-in-the-survey conditions with labels
+        restored for this demo. Target emotions: happy, sad, angry.
+      </p>
+
+      <div class="systems">
+        <article class="sys">
+          <h3>Ours</h3>
+          <p>Speech-conditioned tokens, α=1. Emotion-free prompt only.</p>
+          <p><code>piano, violin string, and drum</code></p>
+        </article>
+        <article class="sys">
+          <h3>SA3 lexical</h3>
+          <p>No speech tokens. One emotion word appended to the prompt.</p>
+          <p><code>…, {emotion}</code></p>
+        </article>
+        <article class="sys">
+          <h3>SA3 VA</h3>
+          <p>No speech tokens. Official IEMOCAP valence and arousal in text.</p>
+          <p><code>…, valence v, arousal a.</code></p>
+        </article>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Emotion">
+        <button type="button" class="on" data-emo="angry">Angry</button>
+        <button type="button" data-emo="happy">Happy</button>
+        <button type="button" data-emo="sad">Sad</button>
+      </div>
+
+      <!-- Angry · set1 = a1 Ses05M_script03_2_M044 -->
+      <article class="set" data-emo="angry">
+        <div class="set-head">
+          <h3>Angry · Set 1</h3>
+          <p class="set-meta">Ses05M_script03_2_M044<br />official A = +1.00, V = −1.00</p>
+        </div>
+        <div class="speech">
+          <p class="cap">Reference speech</p>
+          <audio controls preload="metadata" src="audio/task1/angry/set1/speech.mp3"></audio>
+        </div>
+        <div class="compare">
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech α=1</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set1/ours.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 lexical</h4>
+            <p class="prompt">piano, violin string, and drum, angry</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set1/sa3_lexical.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 VA</h4>
+            <p class="prompt">piano, violin string, and drum, valence −1.00, arousal 1.00.</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set1/sa3_va.mp3"></audio>
+          </div>
+        </div>
+      </article>
+
+      <!-- Angry · set2 = a2 Ses05M_script03_2_M041 -->
+      <article class="set" data-emo="angry">
+        <div class="set-head">
+          <h3>Angry · Set 2</h3>
+          <p class="set-meta">Ses05M_script03_2_M041<br />official A = +0.75, V = −1.00</p>
+        </div>
+        <div class="speech">
+          <p class="cap">Reference speech</p>
+          <audio controls preload="metadata" src="audio/task1/angry/set2/speech.mp3"></audio>
+        </div>
+        <div class="compare">
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech α=1</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set2/ours.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 lexical</h4>
+            <p class="prompt">piano, violin string, and drum, angry</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set2/sa3_lexical.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 VA</h4>
+            <p class="prompt">piano, violin string, and drum, valence −1.00, arousal 0.75.</p>
+            <audio controls preload="metadata" src="audio/task1/angry/set2/sa3_va.mp3"></audio>
+          </div>
+        </div>
+      </article>
+
+      <article class="set" data-emo="happy" hidden>
+        <div class="set-head">
+          <h3>Happy · Set 1</h3>
+          <p class="set-meta">Ses05F_impro03_F055<br />official A = +0.75, V = +1.00</p>
+        </div>
+        <div class="speech">
+          <p class="cap">Reference speech</p>
+          <audio controls preload="metadata" src="audio/task1/happy/set1/speech.mp3"></audio>
+        </div>
+        <div class="compare">
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech α=1</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set1/ours.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 lexical</h4>
+            <p class="prompt">piano, violin string, and drum, happy</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set1/sa3_lexical.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 VA</h4>
+            <p class="prompt">piano, violin string, and drum, valence 1.00, arousal 0.75.</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set1/sa3_va.mp3"></audio>
+          </div>
+        </div>
+      </article>
+
+      <article class="set" data-emo="happy" hidden>
+        <div class="set-head">
+          <h3>Happy · Set 2</h3>
+          <p class="set-meta">Ses05F_impro03_F027<br />official A = +0.00, V = +0.75</p>
+        </div>
+        <div class="speech">
+          <p class="cap">Reference speech</p>
+          <audio controls preload="metadata" src="audio/task1/happy/set2/speech.mp3"></audio>
+        </div>
+        <div class="compare">
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech α=1</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set2/ours.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 lexical</h4>
+            <p class="prompt">piano, violin string, and drum, happy</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set2/sa3_lexical.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 VA</h4>
+            <p class="prompt">piano, violin string, and drum, valence 0.75, arousal 0.00.</p>
+            <audio controls preload="metadata" src="audio/task1/happy/set2/sa3_va.mp3"></audio>
+          </div>
+        </div>
+      </article>
+
+      <article class="set" data-emo="sad" hidden>
+        <div class="set-head">
+          <h3>Sad · Set 1</h3>
+          <p class="set-meta">Ses05F_impro06_F002<br />official A = −0.50, V = −0.75</p>
+        </div>
+        <div class="speech">
+          <p class="cap">Reference speech</p>
+          <audio controls preload="metadata" src="audio/task1/sad/set1/speech.mp3"></audio>
+        </div>
+        <div class="compare">
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech α=1</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set1/ours.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 lexical</h4>
+            <p class="prompt">piano, violin string, and drum, sad</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set1/sa3_lexical.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 VA</h4>
+            <p class="prompt">piano, violin string, and drum, valence −0.75, arousal −0.50.</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set1/sa3_va.mp3"></audio>
+          </div>
+        </div>
+      </article>
+
+      <article class="set" data-emo="sad" hidden>
+        <div class="set-head">
+          <h3>Sad · Set 2</h3>
+          <p class="set-meta">Ses05F_impro06_F016<br />official A = −0.50, V = −0.75</p>
+        </div>
+        <div class="speech">
+          <p class="cap">Reference speech</p>
+          <audio controls preload="metadata" src="audio/task1/sad/set2/speech.mp3"></audio>
+        </div>
+        <div class="compare">
+          <div class="col ours">
+            <h4>Ours</h4>
+            <p class="prompt">piano, violin string, and drum + speech α=1</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set2/ours.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 lexical</h4>
+            <p class="prompt">piano, violin string, and drum, sad</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set2/sa3_lexical.mp3"></audio>
+          </div>
+          <div class="col">
+            <h4>SA3 VA</h4>
+            <p class="prompt">piano, violin string, and drum, valence −0.75, arousal −0.50.</p>
+            <audio controls preload="metadata" src="audio/task1/sad/set2/sa3_va.mp3"></audio>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="task2">
+      <p class="kicker">Task 2</p>
+      <h2>Intensity ladder</h2>
+      <div class="soon">
+        <p>
+          Five-level α sweeps (Ours speech residual vs. SA3 VA blend) will go
+          here next. Same instrument prompt; α ∈ {0, 0.25, 0.5, 0.75, 1}.
+        </p>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>
+        Speech from IEMOCAP Session 5 (held-out). Music generated with frozen
+        Stable Audio 3 medium. GitHub Pages static demo — Task 1 first.
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".filters button");
+    const sets = document.querySelectorAll(".set");
+
+    function show(emo) {
+      buttons.forEach((b) => b.classList.toggle("on", b.dataset.emo === emo));
+      sets.forEach((s) => {
+        s.hidden = s.dataset.emo !== emo;
+      });
+      document.querySelectorAll("audio").forEach((a) => {
+        a.pause();
+        a.currentTime = 0;
+      });
+    }
+
+    buttons.forEach((b) => b.addEventListener("click", () => show(b.dataset.emo)));
+
+    document.querySelectorAll("audio").forEach((el) => {
+      el.addEventListener("play", () => {
+        document.querySelectorAll("audio").forEach((other) => {
+          if (other !== el) other.pause();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

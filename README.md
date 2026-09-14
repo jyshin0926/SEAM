@@ -6,5 +6,5 @@ Listening demo for **SEAM** (speech-conditioned affective music generation).
 
 Task 1 — emotion alignment on IEMOCAP Session 5.
 
-Each set: speech, then SA3 anchor, SA3 lexical, SA3 VA, and Ours.
+Each set: speech, then SA3 lexical, SA3 VA, and Ours.
 Emotions: angry, happy, sad, excited (2 sets each).

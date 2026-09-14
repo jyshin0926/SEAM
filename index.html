@@ -28,7 +28,7 @@
       <p class="kicker">Paper companion</p>
       <h2>Task 1 · emotion alignment</h2>
       <p>
-        Play the speech, then the four music clips. All systems share the same
+        Play the speech, then the three music clips. All systems share the same
         SA3 backbone. Ours uses speech tokens and an emotion-free prompt;
         the others stay text-only.
       </p>
@@ -36,7 +36,6 @@
 
     <section id="task1">
       <div class="legend">
-        <div><b>SA3 anchor</b><span>Instrument prompt only. No emotion word, no speech.</span></div>
         <div><b>SA3 lexical</b><span><code>piano, violin string, and drum, {emotion}</code></span></div>
         <div><b>SA3 VA</b><span><code>…, valence v, arousal a.</code> from official IEMOCAP.</span></div>
         <div><b>Ours</b><span>Speech tokens + emotion-free instrument prompt.</span></div>
@@ -58,10 +57,6 @@
           <div class="row speech">
             <span class="name">Speech</span>
             <audio controls preload="metadata" src="audio/task1/angry/set1/speech.mp3"></audio>
-          </div>
-          <div class="row">
-            <span class="name">SA3 anchor</span>
-            <audio title="Instrument-only SA3, no emotion word" controls preload="metadata" src="audio/task1/angry/set1/anchor.mp3"></audio>
           </div>
           <div class="row">
             <span class="name">SA3 lexical</span>
@@ -89,10 +84,6 @@
             <audio controls preload="metadata" src="audio/task1/angry/set2/speech.mp3"></audio>
           </div>
           <div class="row">
-            <span class="name">SA3 anchor</span>
-            <audio title="Instrument-only SA3, no emotion word" controls preload="metadata" src="audio/task1/angry/set2/anchor.mp3"></audio>
-          </div>
-          <div class="row">
             <span class="name">SA3 lexical</span>
             <audio title="piano, violin string, and drum, angry" controls preload="metadata" src="audio/task1/angry/set2/sa3_lexical.mp3"></audio>
           </div>
@@ -116,10 +107,6 @@
           <div class="row speech">
             <span class="name">Speech</span>
             <audio controls preload="metadata" src="audio/task1/happy/set1/speech.mp3"></audio>
-          </div>
-          <div class="row">
-            <span class="name">SA3 anchor</span>
-            <audio title="Instrument-only SA3, no emotion word" controls preload="metadata" src="audio/task1/happy/set1/anchor.mp3"></audio>
           </div>
           <div class="row">
             <span class="name">SA3 lexical</span>
@@ -147,10 +134,6 @@
             <audio controls preload="metadata" src="audio/task1/happy/set2/speech.mp3"></audio>
           </div>
           <div class="row">
-            <span class="name">SA3 anchor</span>
-            <audio title="Instrument-only SA3, no emotion word" controls preload="metadata" src="audio/task1/happy/set2/anchor.mp3"></audio>
-          </div>
-          <div class="row">
             <span class="name">SA3 lexical</span>
             <audio title="piano, violin string, and drum, happy" controls preload="metadata" src="audio/task1/happy/set2/sa3_lexical.mp3"></audio>
           </div>
@@ -174,10 +157,6 @@
           <div class="row speech">
             <span class="name">Speech</span>
             <audio controls preload="metadata" src="audio/task1/sad/set1/speech.mp3"></audio>
-          </div>
-          <div class="row">
-            <span class="name">SA3 anchor</span>
-            <audio title="Instrument-only SA3, no emotion word" controls preload="metadata" src="audio/task1/sad/set1/anchor.mp3"></audio>
           </div>
           <div class="row">
             <span class="name">SA3 lexical</span>
@@ -205,10 +184,6 @@
             <audio controls preload="metadata" src="audio/task1/sad/set2/speech.mp3"></audio>
           </div>
           <div class="row">
-            <span class="name">SA3 anchor</span>
-            <audio title="Instrument-only SA3, no emotion word" controls preload="metadata" src="audio/task1/sad/set2/anchor.mp3"></audio>
-          </div>
-          <div class="row">
             <span class="name">SA3 lexical</span>
             <audio title="piano, violin string, and drum, sad" controls preload="metadata" src="audio/task1/sad/set2/sa3_lexical.mp3"></audio>
           </div>
@@ -234,10 +209,6 @@
             <audio controls preload="metadata" src="audio/task1/excited/set1/speech.mp3"></audio>
           </div>
           <div class="row">
-            <span class="name">SA3 anchor</span>
-            <audio title="Instrument-only SA3, no emotion word" controls preload="metadata" src="audio/task1/excited/set1/anchor.mp3"></audio>
-          </div>
-          <div class="row">
             <span class="name">SA3 lexical</span>
             <audio title="piano, violin string, and drum, excited" controls preload="metadata" src="audio/task1/excited/set1/sa3_lexical.mp3"></audio>
           </div>
@@ -261,10 +232,6 @@
           <div class="row speech">
             <span class="name">Speech</span>
             <audio controls preload="metadata" src="audio/task1/excited/set2/speech.mp3"></audio>
-          </div>
-          <div class="row">
-            <span class="name">SA3 anchor</span>
-            <audio title="Instrument-only SA3, no emotion word" controls preload="metadata" src="audio/task1/excited/set2/anchor.mp3"></audio>
           </div>
           <div class="row">
             <span class="name">SA3 lexical</span>

@@ -308,6 +308,7 @@
         <button type="button" class="on" data-emo="angry">Angry</button>
         <button type="button" data-emo="happy">Happy</button>
         <button type="button" data-emo="sad">Sad</button>
+        <button type="button" data-emo="excited">Excited</button>
       </div>
 
       <article class="set" data-emo="angry">
@@ -502,6 +503,71 @@
             <span class="name">α = 1.00</span>
             <code class="prompt">piano, violin string, and drum with 0.00 of neutral and 1.00 of sad.</code>
             <audio title="piano, violin string, and drum with 0.00 of neutral and 1.00 of sad." controls preload="metadata" src="audio/task2/sad/sa3_a1.00.mp3"></audio>
+          </div>
+        </div>
+      </article>
+      <article class="set" data-emo="excited" hidden>
+        <div class="set-head">
+          <h3>Excited</h3>
+          <p class="set-meta">Ses05M_impro03_F007</p>
+        </div>
+        <div class="tracks">
+          <p class="group-label">Reference</p>
+          <div class="row speech">
+            <span class="name">Speech</span>
+            <audio controls preload="metadata" src="audio/task2/excited/speech.mp3"></audio>
+          </div>
+          <p class="group-label">Ours</p>
+          <div class="row ours">
+            <span class="name">α = 0.00</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/excited/ours_a0.00.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.25</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/excited/ours_a0.25.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.50</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/excited/ours_a0.50.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.75</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/excited/ours_a0.75.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 1.00</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/excited/ours_a1.00.mp3"></audio>
+          </div>
+          <p class="group-label">SA3 lexical blend</p>
+          <div class="row">
+            <span class="name">α = 0.00</span>
+            <code class="prompt">piano, violin string, and drum with 1.00 of neutral and 0.00 of excited.</code>
+            <audio title="piano, violin string, and drum with 1.00 of neutral and 0.00 of excited." controls preload="metadata" src="audio/task2/excited/sa3_a0.00.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.25</span>
+            <code class="prompt">piano, violin string, and drum with 0.75 of neutral and 0.25 of excited.</code>
+            <audio title="piano, violin string, and drum with 0.75 of neutral and 0.25 of excited." controls preload="metadata" src="audio/task2/excited/sa3_a0.25.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.50</span>
+            <code class="prompt">piano, violin string, and drum with 0.50 of neutral and 0.50 of excited.</code>
+            <audio title="piano, violin string, and drum with 0.50 of neutral and 0.50 of excited." controls preload="metadata" src="audio/task2/excited/sa3_a0.50.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.75</span>
+            <code class="prompt">piano, violin string, and drum with 0.25 of neutral and 0.75 of excited.</code>
+            <audio title="piano, violin string, and drum with 0.25 of neutral and 0.75 of excited." controls preload="metadata" src="audio/task2/excited/sa3_a0.75.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 1.00</span>
+            <code class="prompt">piano, violin string, and drum with 0.00 of neutral and 1.00 of excited.</code>
+            <audio title="piano, violin string, and drum with 0.00 of neutral and 1.00 of excited." controls preload="metadata" src="audio/task2/excited/sa3_a1.00.mp3"></audio>
           </div>
         </div>
       </article>

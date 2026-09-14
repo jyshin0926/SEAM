@@ -12,4 +12,4 @@ Emotions: angry, happy, sad, excited (2 sets each).
 Task 2 — intensity ladder (α = 0, 0.25, 0.50, 0.75, 1).
 
 Same utterance per emotion: speech, then Ours residual steering, then SA3 lexical blend.
-Emotions: angry, happy, sad.
+Emotions: angry, happy, sad, excited.

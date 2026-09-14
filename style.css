@@ -205,49 +205,57 @@ p, li {
 .set-meta { font-size: 0.78rem; color: var(--sand-dim); text-align: right; }
 
 .speech {
-  padding: 1rem 1.15rem 0.4rem;
+  display: grid;
+  grid-template-columns: minmax(12rem, 16rem) 1fr;
+  gap: 0.2rem 1.1rem;
+  align-items: center;
+  padding: 0.85rem 1.15rem 0.75rem;
+  border-bottom: 1px solid var(--line);
 }
 
-.cap {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--mint);
-  margin-bottom: 0.35rem;
-}
+.speech .cap { margin: 0; }
 
 audio { width: 100%; height: 36px; }
 
 .compare {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
 }
 
 .col {
-  padding: 1rem 1.05rem 1.15rem;
-  border-right: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(12rem, 16rem) 1fr;
+  grid-template-areas:
+    "title audio"
+    "prompt audio";
+  column-gap: 1.1rem;
+  row-gap: 0.12rem;
+  align-items: center;
+  padding: 0.7rem 1.15rem;
+  border-bottom: 1px solid var(--line);
 }
 
-.col:last-child { border-right: none; }
+.col:last-child { border-bottom: none; }
 
 .col.ours { background: rgba(200, 120, 58, 0.08); }
 
 .col h4 {
+  grid-area: title;
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.86rem;
-  margin: 0 0 0.2rem;
+  margin: 0;
   color: var(--sand);
 }
 
 .prompt {
+  grid-area: prompt;
   font-size: 0.72rem;
   color: var(--sand-dim);
-  margin: 0 0 0.7rem;
-  min-height: 2.6em;
+  margin: 0;
 }
+
+.col audio { grid-area: audio; }
 
 .soon {
   opacity: 0.55;
@@ -264,10 +272,25 @@ footer.foot {
   color: var(--sand-dim);
 }
 
+.cap {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+
 @media (max-width: 860px) {
-  .systems, .compare { grid-template-columns: 1fr; }
-  .col { border-right: none; border-bottom: 1px solid var(--line); }
-  .col:last-child { border-bottom: none; }
+  .systems { grid-template-columns: 1fr 1fr; }
   .set-head { flex-direction: column; align-items: flex-start; }
   .set-meta { text-align: left; }
+}
+
+@media (max-width: 640px) {
+  .systems { grid-template-columns: 1fr; }
+  .speech,
+  .col {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+  .col h4, .prompt, .col audio { grid-area: auto; }
 }

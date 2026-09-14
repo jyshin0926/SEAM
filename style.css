@@ -1,9 +1,9 @@
 :root {
-  --bg: #f6f3ec;
-  --text: #1d211f;
-  --muted: #6a736e;
-  --line: #ddd6c8;
-  --accent: #c05c1a;
+  --bg: #151a18;
+  --text: #ebe6da;
+  --muted: #9aa39e;
+  --line: #3a433e;
+  --accent: #d0864a;
   --font-display: "Instrument Serif", Georgia, serif;
   --font-body: "Sora", system-ui, sans-serif;
   --label: 9.5rem;
@@ -195,6 +195,7 @@ p { margin: 0 0 0.8rem; color: var(--muted); }
 audio {
   width: 100%;
   height: 32px;
+  color-scheme: dark;
 }
 
 .soon {

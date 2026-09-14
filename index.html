@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SEAM — listening demo</title>
-  <meta name="description" content="ICASSP 2027 listening demo: speech-conditioned affective music generation (Task 1 emotion alignment)." />
+  <meta name="description" content="ICASSP 2027 listening demo: speech-conditioned affective music generation (Task 1 emotion alignment, Task 2 intensity ladders)." />
   <base href="/SEAM/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,7 +34,7 @@
       </p>
     </section>
 
-    <section id="task1">
+    <section id="task1" class="listen">
       <div class="legend">
         <div><b>Speech</b><span>IEMOCAP reference utterance — not generated.</span></div>
         <div><b>SA3 lexical</b><span>Emotion word appended to the instrument prompt.</span></div>
@@ -290,36 +290,249 @@
       </article>
     </section>
 
-    <section id="task2">
+    <section id="task2" class="listen">
       <p class="kicker">Task 2</p>
       <h2>Intensity ladder</h2>
-      <p class="soon">Five-level α sweeps will be added here.</p>
+      <p>
+        Same spoken utterance, five α values. Ours steers the speech residual
+        on an emotion-free prompt; SA3 writes the mix into the text and never
+        sees the speech.
+      </p>
+      <div class="legend">
+        <div><b>Speech</b><span>IEMOCAP reference utterance — not generated.</span></div>
+        <div><b>Ours</b><span>Speech tokens plus an emotion-free instrument prompt. α scales the residual.</span></div>
+        <div><b>SA3 lexical blend</b><span>Text-only: <code>p with (1−α) of neutral and α of {emotion}.</code></span></div>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Task 2 emotion">
+        <button type="button" class="on" data-emo="angry">Angry</button>
+        <button type="button" data-emo="happy">Happy</button>
+        <button type="button" data-emo="sad">Sad</button>
+      </div>
+
+      <article class="set" data-emo="angry">
+        <div class="set-head">
+          <h3>Angry</h3>
+          <p class="set-meta">Ses05F_impro08_M003</p>
+        </div>
+        <div class="tracks">
+          <p class="group-label">Reference</p>
+          <div class="row speech">
+            <span class="name">Speech</span>
+            <audio controls preload="metadata" src="audio/task2/angry/speech.mp3"></audio>
+          </div>
+          <p class="group-label">Ours</p>
+          <div class="row ours">
+            <span class="name">α = 0.00</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.00.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.25</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.25.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.50</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.50.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.75</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.75.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 1.00</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a1.00.mp3"></audio>
+          </div>
+          <p class="group-label">SA3 lexical blend</p>
+          <div class="row">
+            <span class="name">α = 0.00</span>
+            <code class="prompt">piano, violin string, and drum with 1.00 of neutral and 0.00 of angry.</code>
+            <audio title="piano, violin string, and drum with 1.00 of neutral and 0.00 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.00.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.25</span>
+            <code class="prompt">piano, violin string, and drum with 0.75 of neutral and 0.25 of angry.</code>
+            <audio title="piano, violin string, and drum with 0.75 of neutral and 0.25 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.25.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.50</span>
+            <code class="prompt">piano, violin string, and drum with 0.50 of neutral and 0.50 of angry.</code>
+            <audio title="piano, violin string, and drum with 0.50 of neutral and 0.50 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.50.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.75</span>
+            <code class="prompt">piano, violin string, and drum with 0.25 of neutral and 0.75 of angry.</code>
+            <audio title="piano, violin string, and drum with 0.25 of neutral and 0.75 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.75.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 1.00</span>
+            <code class="prompt">piano, violin string, and drum with 0.00 of neutral and 1.00 of angry.</code>
+            <audio title="piano, violin string, and drum with 0.00 of neutral and 1.00 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a1.00.mp3"></audio>
+          </div>
+        </div>
+      </article>
+      <article class="set" data-emo="happy" hidden>
+        <div class="set-head">
+          <h3>Happy</h3>
+          <p class="set-meta">Ses05M_impro03_M002</p>
+        </div>
+        <div class="tracks">
+          <p class="group-label">Reference</p>
+          <div class="row speech">
+            <span class="name">Speech</span>
+            <audio controls preload="metadata" src="audio/task2/happy/speech.mp3"></audio>
+          </div>
+          <p class="group-label">Ours</p>
+          <div class="row ours">
+            <span class="name">α = 0.00</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/happy/ours_a0.00.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.25</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/happy/ours_a0.25.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.50</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/happy/ours_a0.50.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.75</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/happy/ours_a0.75.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 1.00</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/happy/ours_a1.00.mp3"></audio>
+          </div>
+          <p class="group-label">SA3 lexical blend</p>
+          <div class="row">
+            <span class="name">α = 0.00</span>
+            <code class="prompt">piano, violin string, and drum with 1.00 of neutral and 0.00 of happy.</code>
+            <audio title="piano, violin string, and drum with 1.00 of neutral and 0.00 of happy." controls preload="metadata" src="audio/task2/happy/sa3_a0.00.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.25</span>
+            <code class="prompt">piano, violin string, and drum with 0.75 of neutral and 0.25 of happy.</code>
+            <audio title="piano, violin string, and drum with 0.75 of neutral and 0.25 of happy." controls preload="metadata" src="audio/task2/happy/sa3_a0.25.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.50</span>
+            <code class="prompt">piano, violin string, and drum with 0.50 of neutral and 0.50 of happy.</code>
+            <audio title="piano, violin string, and drum with 0.50 of neutral and 0.50 of happy." controls preload="metadata" src="audio/task2/happy/sa3_a0.50.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.75</span>
+            <code class="prompt">piano, violin string, and drum with 0.25 of neutral and 0.75 of happy.</code>
+            <audio title="piano, violin string, and drum with 0.25 of neutral and 0.75 of happy." controls preload="metadata" src="audio/task2/happy/sa3_a0.75.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 1.00</span>
+            <code class="prompt">piano, violin string, and drum with 0.00 of neutral and 1.00 of happy.</code>
+            <audio title="piano, violin string, and drum with 0.00 of neutral and 1.00 of happy." controls preload="metadata" src="audio/task2/happy/sa3_a1.00.mp3"></audio>
+          </div>
+        </div>
+      </article>
+      <article class="set" data-emo="sad" hidden>
+        <div class="set-head">
+          <h3>Sad</h3>
+          <p class="set-meta">Ses05M_impro06_M013</p>
+        </div>
+        <div class="tracks">
+          <p class="group-label">Reference</p>
+          <div class="row speech">
+            <span class="name">Speech</span>
+            <audio controls preload="metadata" src="audio/task2/sad/speech.mp3"></audio>
+          </div>
+          <p class="group-label">Ours</p>
+          <div class="row ours">
+            <span class="name">α = 0.00</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/sad/ours_a0.00.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.25</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/sad/ours_a0.25.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.50</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/sad/ours_a0.50.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 0.75</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/sad/ours_a0.75.mp3"></audio>
+          </div>
+          <div class="row ours">
+            <span class="name">α = 1.00</span>
+            <code class="prompt">piano, violin string, and drum + speech tokens</code>
+            <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/sad/ours_a1.00.mp3"></audio>
+          </div>
+          <p class="group-label">SA3 lexical blend</p>
+          <div class="row">
+            <span class="name">α = 0.00</span>
+            <code class="prompt">piano, violin string, and drum with 1.00 of neutral and 0.00 of sad.</code>
+            <audio title="piano, violin string, and drum with 1.00 of neutral and 0.00 of sad." controls preload="metadata" src="audio/task2/sad/sa3_a0.00.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.25</span>
+            <code class="prompt">piano, violin string, and drum with 0.75 of neutral and 0.25 of sad.</code>
+            <audio title="piano, violin string, and drum with 0.75 of neutral and 0.25 of sad." controls preload="metadata" src="audio/task2/sad/sa3_a0.25.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.50</span>
+            <code class="prompt">piano, violin string, and drum with 0.50 of neutral and 0.50 of sad.</code>
+            <audio title="piano, violin string, and drum with 0.50 of neutral and 0.50 of sad." controls preload="metadata" src="audio/task2/sad/sa3_a0.50.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 0.75</span>
+            <code class="prompt">piano, violin string, and drum with 0.25 of neutral and 0.75 of sad.</code>
+            <audio title="piano, violin string, and drum with 0.25 of neutral and 0.75 of sad." controls preload="metadata" src="audio/task2/sad/sa3_a0.75.mp3"></audio>
+          </div>
+          <div class="row">
+            <span class="name">α = 1.00</span>
+            <code class="prompt">piano, violin string, and drum with 0.00 of neutral and 1.00 of sad.</code>
+            <audio title="piano, violin string, and drum with 0.00 of neutral and 1.00 of sad." controls preload="metadata" src="audio/task2/sad/sa3_a1.00.mp3"></audio>
+          </div>
+        </div>
+      </article>
     </section>
 
     <footer class="foot">
       <p>
         Speech from IEMOCAP Session 5 (held-out). Music generated with frozen
-        Stable Audio 3 medium. GitHub Pages static demo — Task 1 first.
+        Stable Audio 3 medium. GitHub Pages static demo — Task 1 and Task 2.
       </p>
     </footer>
   </div>
 
   <script>
-    const buttons = document.querySelectorAll(".filters button");
-    const sets = document.querySelectorAll(".set");
+    document.querySelectorAll("section.listen").forEach((root) => {
+      const buttons = root.querySelectorAll(".filters button");
+      const sets = root.querySelectorAll(".set");
 
-    function show(emo) {
-      buttons.forEach((b) => b.classList.toggle("on", b.dataset.emo === emo));
-      sets.forEach((s) => {
-        s.hidden = s.dataset.emo !== emo;
-      });
-      document.querySelectorAll("audio").forEach((a) => {
-        a.pause();
-        a.currentTime = 0;
-      });
-    }
+      function show(emo) {
+        buttons.forEach((b) => b.classList.toggle("on", b.dataset.emo === emo));
+        sets.forEach((s) => {
+          s.hidden = s.dataset.emo !== emo;
+        });
+        root.querySelectorAll("audio").forEach((a) => {
+          a.pause();
+          a.currentTime = 0;
+        });
+      }
 
-    buttons.forEach((b) => b.addEventListener("click", () => show(b.dataset.emo)));
+      buttons.forEach((b) => b.addEventListener("click", () => show(b.dataset.emo)));
+    });
 
     document.querySelectorAll("audio").forEach((el) => {
       el.addEventListener("play", () => {

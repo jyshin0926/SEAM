@@ -43,73 +43,13 @@
       </div>
 
       <div class="filters" role="tablist" aria-label="Emotion">
-        <button type="button" class="on" data-emo="angry">Angry</button>
-        <button type="button" data-emo="happy">Happy</button>
+        <button type="button" class="on" data-emo="happy">Happy</button>
         <button type="button" data-emo="sad">Sad</button>
+        <button type="button" data-emo="angry">Angry</button>
         <button type="button" data-emo="excited">Excited</button>
       </div>
 
-      <article class="set" data-emo="angry">
-        <div class="set-head">
-          <h3>Angry · Set 1</h3>
-          <p class="set-meta">Ses05F_impro02_M014</p>
-        </div>
-        <div class="tracks">
-          <div class="ref">
-            <span class="name">Speech</span>
-            <audio controls preload="metadata" src="audio/task1/angry/set1/speech.mp3"></audio>
-          </div>
-          <div class="compare cols-3">
-            <div class="col">
-              <span class="name">SA3 lexical</span>
-              <code class="prompt">piano, violin string, and drum, angry</code>
-              <audio title="piano, violin string, and drum, angry" controls preload="metadata" src="audio/task1/angry/set1/sa3_lexical.mp3"></audio>
-            </div>
-            <div class="col">
-              <span class="name">SA3 VA</span>
-              <code class="prompt">piano, violin string, and drum, valence -0.75, arousal +0.25.</code>
-              <audio title="piano, violin string, and drum, valence -0.75, arousal +0.25." controls preload="metadata" src="audio/task1/angry/set1/sa3_va.mp3"></audio>
-            </div>
-            <div class="col ours">
-              <span class="name">Ours</span>
-              <code class="prompt">piano, violin string, and drum + speech tokens</code>
-              <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task1/angry/set1/ours.mp3"></audio>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="set" data-emo="angry">
-        <div class="set-head">
-          <h3>Angry · Set 2</h3>
-          <p class="set-meta">Ses05F_script01_1_F038</p>
-        </div>
-        <div class="tracks">
-          <div class="ref">
-            <span class="name">Speech</span>
-            <audio controls preload="metadata" src="audio/task1/angry/set2/speech.mp3"></audio>
-          </div>
-          <div class="compare cols-3">
-            <div class="col">
-              <span class="name">SA3 lexical</span>
-              <code class="prompt">piano, violin string, and drum, angry</code>
-              <audio title="piano, violin string, and drum, angry" controls preload="metadata" src="audio/task1/angry/set2/sa3_lexical.mp3"></audio>
-            </div>
-            <div class="col">
-              <span class="name">SA3 VA</span>
-              <code class="prompt">piano, violin string, and drum, valence -0.75, arousal +0.50.</code>
-              <audio title="piano, violin string, and drum, valence -0.75, arousal +0.50." controls preload="metadata" src="audio/task1/angry/set2/sa3_va.mp3"></audio>
-            </div>
-            <div class="col ours">
-              <span class="name">Ours</span>
-              <code class="prompt">piano, violin string, and drum + speech tokens</code>
-              <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task1/angry/set2/ours.mp3"></audio>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="set" data-emo="happy" hidden>
+      <article class="set" data-emo="happy">
         <div class="set-head">
           <h3>Happy · Set 1</h3>
           <p class="set-meta">Ses05F_impro03_F051</p>
@@ -138,8 +78,7 @@
           </div>
         </div>
       </article>
-
-      <article class="set" data-emo="happy" hidden>
+      <article class="set" data-emo="happy">
         <div class="set-head">
           <h3>Happy · Set 2</h3>
           <p class="set-meta">Ses05M_impro03_M025</p>
@@ -168,7 +107,6 @@
           </div>
         </div>
       </article>
-
       <article class="set" data-emo="sad" hidden>
         <div class="set-head">
           <h3>Sad · Set 1</h3>
@@ -198,7 +136,6 @@
           </div>
         </div>
       </article>
-
       <article class="set" data-emo="sad" hidden>
         <div class="set-head">
           <h3>Sad · Set 2</h3>
@@ -228,7 +165,64 @@
           </div>
         </div>
       </article>
-
+      <article class="set" data-emo="angry" hidden>
+        <div class="set-head">
+          <h3>Angry · Set 1</h3>
+          <p class="set-meta">Ses05F_impro02_M014</p>
+        </div>
+        <div class="tracks">
+          <div class="ref">
+            <span class="name">Speech</span>
+            <audio controls preload="metadata" src="audio/task1/angry/set1/speech.mp3"></audio>
+          </div>
+          <div class="compare cols-3">
+            <div class="col">
+              <span class="name">SA3 lexical</span>
+              <code class="prompt">piano, violin string, and drum, angry</code>
+              <audio title="piano, violin string, and drum, angry" controls preload="metadata" src="audio/task1/angry/set1/sa3_lexical.mp3"></audio>
+            </div>
+            <div class="col">
+              <span class="name">SA3 VA</span>
+              <code class="prompt">piano, violin string, and drum, valence -0.75, arousal +0.25.</code>
+              <audio title="piano, violin string, and drum, valence -0.75, arousal +0.25." controls preload="metadata" src="audio/task1/angry/set1/sa3_va.mp3"></audio>
+            </div>
+            <div class="col ours">
+              <span class="name">Ours</span>
+              <code class="prompt">piano, violin string, and drum + speech tokens</code>
+              <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task1/angry/set1/ours.mp3"></audio>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="set" data-emo="angry" hidden>
+        <div class="set-head">
+          <h3>Angry · Set 2</h3>
+          <p class="set-meta">Ses05F_script01_1_F038</p>
+        </div>
+        <div class="tracks">
+          <div class="ref">
+            <span class="name">Speech</span>
+            <audio controls preload="metadata" src="audio/task1/angry/set2/speech.mp3"></audio>
+          </div>
+          <div class="compare cols-3">
+            <div class="col">
+              <span class="name">SA3 lexical</span>
+              <code class="prompt">piano, violin string, and drum, angry</code>
+              <audio title="piano, violin string, and drum, angry" controls preload="metadata" src="audio/task1/angry/set2/sa3_lexical.mp3"></audio>
+            </div>
+            <div class="col">
+              <span class="name">SA3 VA</span>
+              <code class="prompt">piano, violin string, and drum, valence -0.75, arousal +0.50.</code>
+              <audio title="piano, violin string, and drum, valence -0.75, arousal +0.50." controls preload="metadata" src="audio/task1/angry/set2/sa3_va.mp3"></audio>
+            </div>
+            <div class="col ours">
+              <span class="name">Ours</span>
+              <code class="prompt">piano, violin string, and drum + speech tokens</code>
+              <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task1/angry/set2/ours.mp3"></audio>
+            </div>
+          </div>
+        </div>
+      </article>
       <article class="set" data-emo="excited" hidden>
         <div class="set-head">
           <h3>Excited · Set 1</h3>
@@ -258,7 +252,6 @@
           </div>
         </div>
       </article>
-
       <article class="set" data-emo="excited" hidden>
         <div class="set-head">
           <h3>Excited · Set 2</h3>
@@ -305,79 +298,13 @@
       </div>
 
       <div class="filters" role="tablist" aria-label="Task 2 emotion">
-        <button type="button" class="on" data-emo="angry">Angry</button>
-        <button type="button" data-emo="happy">Happy</button>
+        <button type="button" class="on" data-emo="happy">Happy</button>
         <button type="button" data-emo="sad">Sad</button>
+        <button type="button" data-emo="angry">Angry</button>
         <button type="button" data-emo="excited">Excited</button>
       </div>
 
-      <article class="set" data-emo="angry">
-        <div class="set-head">
-          <h3>Angry</h3>
-          <p class="set-meta">Ses05F_impro08_M003</p>
-        </div>
-        <div class="tracks">
-          <div class="ref">
-            <span class="name">Speech</span>
-            <audio controls preload="metadata" src="audio/task2/angry/speech.mp3"></audio>
-          </div>
-          <div class="compare">
-            <div class="col">
-              <div class="col-head">
-                <p class="group-label">Text-only</p>
-                <code class="prompt">piano, violin string, and drum with (1−α) of neutral and α of angry.</code>
-              </div>
-              <div class="row">
-                <span class="name">α = 0.00</span>
-                <audio title="piano, violin string, and drum with 1.00 of neutral and 0.00 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.00.mp3"></audio>
-              </div>
-              <div class="row">
-                <span class="name">α = 0.25</span>
-                <audio title="piano, violin string, and drum with 0.75 of neutral and 0.25 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.25.mp3"></audio>
-              </div>
-              <div class="row">
-                <span class="name">α = 0.50</span>
-                <audio title="piano, violin string, and drum with 0.50 of neutral and 0.50 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.50.mp3"></audio>
-              </div>
-              <div class="row">
-                <span class="name">α = 0.75</span>
-                <audio title="piano, violin string, and drum with 0.25 of neutral and 0.75 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.75.mp3"></audio>
-              </div>
-              <div class="row">
-                <span class="name">α = 1.00</span>
-                <audio title="piano, violin string, and drum with 0.00 of neutral and 1.00 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a1.00.mp3"></audio>
-              </div>
-            </div>
-            <div class="col ours">
-              <div class="col-head">
-                <p class="group-label">Ours</p>
-                <code class="prompt">piano, violin string, and drum + speech tokens</code>
-              </div>
-              <div class="row ours">
-                <span class="name">α = 0.00</span>
-                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.00.mp3"></audio>
-              </div>
-              <div class="row ours">
-                <span class="name">α = 0.25</span>
-                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.25.mp3"></audio>
-              </div>
-              <div class="row ours">
-                <span class="name">α = 0.50</span>
-                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.50.mp3"></audio>
-              </div>
-              <div class="row ours">
-                <span class="name">α = 0.75</span>
-                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.75.mp3"></audio>
-              </div>
-              <div class="row ours">
-                <span class="name">α = 1.00</span>
-                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a1.00.mp3"></audio>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="set" data-emo="happy" hidden>
+      <article class="set" data-emo="happy">
         <div class="set-head">
           <h3>Happy</h3>
           <p class="set-meta">Ses05M_impro03_M002</p>
@@ -504,6 +431,72 @@
               <div class="row ours">
                 <span class="name">α = 1.00</span>
                 <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/sad/ours_a1.00.mp3"></audio>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="set" data-emo="angry" hidden>
+        <div class="set-head">
+          <h3>Angry</h3>
+          <p class="set-meta">Ses05F_impro08_M003</p>
+        </div>
+        <div class="tracks">
+          <div class="ref">
+            <span class="name">Speech</span>
+            <audio controls preload="metadata" src="audio/task2/angry/speech.mp3"></audio>
+          </div>
+          <div class="compare">
+            <div class="col">
+              <div class="col-head">
+                <p class="group-label">Text-only</p>
+                <code class="prompt">piano, violin string, and drum with (1−α) of neutral and α of angry.</code>
+              </div>
+              <div class="row">
+                <span class="name">α = 0.00</span>
+                <audio title="piano, violin string, and drum with 1.00 of neutral and 0.00 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.00.mp3"></audio>
+              </div>
+              <div class="row">
+                <span class="name">α = 0.25</span>
+                <audio title="piano, violin string, and drum with 0.75 of neutral and 0.25 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.25.mp3"></audio>
+              </div>
+              <div class="row">
+                <span class="name">α = 0.50</span>
+                <audio title="piano, violin string, and drum with 0.50 of neutral and 0.50 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.50.mp3"></audio>
+              </div>
+              <div class="row">
+                <span class="name">α = 0.75</span>
+                <audio title="piano, violin string, and drum with 0.25 of neutral and 0.75 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a0.75.mp3"></audio>
+              </div>
+              <div class="row">
+                <span class="name">α = 1.00</span>
+                <audio title="piano, violin string, and drum with 0.00 of neutral and 1.00 of angry." controls preload="metadata" src="audio/task2/angry/sa3_a1.00.mp3"></audio>
+              </div>
+            </div>
+            <div class="col ours">
+              <div class="col-head">
+                <p class="group-label">Ours</p>
+                <code class="prompt">piano, violin string, and drum + speech tokens</code>
+              </div>
+              <div class="row ours">
+                <span class="name">α = 0.00</span>
+                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.00.mp3"></audio>
+              </div>
+              <div class="row ours">
+                <span class="name">α = 0.25</span>
+                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.25.mp3"></audio>
+              </div>
+              <div class="row ours">
+                <span class="name">α = 0.50</span>
+                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.50.mp3"></audio>
+              </div>
+              <div class="row ours">
+                <span class="name">α = 0.75</span>
+                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a0.75.mp3"></audio>
+              </div>
+              <div class="row ours">
+                <span class="name">α = 1.00</span>
+                <audio title="piano, violin string, and drum + speech tokens" controls preload="metadata" src="audio/task2/angry/ours_a1.00.mp3"></audio>
               </div>
             </div>
           </div>
